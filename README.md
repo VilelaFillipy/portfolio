@@ -1,30 +1,29 @@
-# Fillipy Vilela — Portfolio
+# Fillipy Vilela — Desenvolvedor Full Stack
 
-Personal portfolio built with React + Vite, featuring a dark/light theme, animated particle background, typing effect, and a functional contact form.
+Olá! Sou desenvolvedor full stack com foco em aplicações web de alto desempenho, sistemas escaláveis e interfaces modernas. Este repositório contém o código do meu portfólio pessoal.
 
-🌐 **Live:** [fillipy.com.br](https://fillipy.com.br)
+🌐 **Acesse:** [fillipy.com.br](https://fillipy.com.br)
 
-## Tech Stack
+---
 
-- React
-- Vite
+## Sobre mim
+
+Desenvolvo do frontend ao backend, com atenção a cada detalhe — de interfaces pixel-perfect a APIs robustas. Aberto a projetos freelance, parcerias e oportunidades full-time.
+
+📧 vilelafillipy101@gmail.com
+💼 [linkedin.com/in/fillipy-vilela](https://www.linkedin.com/in/fillipy-vilela/)
+
+---
+
+## Tecnologias que uso
+
+React • TypeScript • JavaScript • Python • Node.js • PHP • Laravel • Flutter • AWS • Docker • Git • N8N
+
+---
+
+## Este portfólio foi construído com
+
+- React + Vite
 - Framer Motion
 - EmailJS
-- CSS Variables (dark/light theme)
-- Netlify (deploy)
-
-## Features
-
-- Dark/light theme toggle
-- Animated particle background
-- Typing effect
-- Responsive design
-- Contact form with EmailJS integration
-- Smooth scroll navigation
-
-## Running locally
-
-```bash
-npm install
-npm run dev
-```
+- Netlify
