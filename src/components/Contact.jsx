@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import './Contact.css'
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/SEU_FORM_ID'
+
 
 const socials = [
   {
@@ -48,31 +48,35 @@ export default function Contact() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
   const [status, setStatus] = useState(null)
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [form, setForm] = useState({ nome: '', email: '', mensagem: '' })
 
   const handleChange = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setStatus('sending')
 
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ name: form.name, email: form.email, message: form.message }),
+    const myForm = e.target
+    const formData = new FormData(myForm)
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then((res) => {
+        if (res.ok) {
+          setStatus('sent')
+          setForm({ nome: '', email: '', mensagem: '' })
+        } else {
+          setStatus('error')
+        }
       })
-      if (res.ok) {
-        setStatus('sent')
-        setForm({ name: '', email: '', message: '' })
-      } else {
+      .catch(() => {
         setStatus('error')
-      }
-    } catch {
-      setStatus('error')
-    }
+      })
   }
 
   return (
@@ -126,14 +130,15 @@ export default function Contact() {
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
           >
+            <input type="hidden" name="form-name" value="contato" />
             <div className="form-group">
               <label htmlFor="name">Nome</label>
               <input
                 id="name"
-                name="name"
+                name="nome"
                 type="text"
                 placeholder="Seu nome"
-                value={form.name}
+                value={form.nome}
                 onChange={handleChange}
                 required
               />
@@ -156,10 +161,10 @@ export default function Contact() {
               <label htmlFor="message">Mensagem</label>
               <textarea
                 id="message"
-                name="message"
+                name="mensagem"
                 rows={5}
                 placeholder="Me fale sobre seu projeto..."
-                value={form.message}
+                value={form.mensagem}
                 onChange={handleChange}
                 required
               />
