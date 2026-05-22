@@ -8,7 +8,7 @@ Olá! Sou desenvolvedor full stack com foco em aplicações web de alto desempen
 
 ## Sobre mim
 
-Desenvolvo do frontend ao backend, com atenção a cada detalhe — de interfaces pixel-perfect a APIs robustas. Aberto a projetos freelance, parcerias e oportunidades full-time.
+Desenvolvo do frontend ao backend, com atenção a cada detalhe — de interfaces pixel-perfect a APIs robustas. Aberto a projetos freelance e parcerias.
 
 📧 vilelafillipy101@gmail.com
 💼 [linkedin.com/in/fillipy-vilela](https://www.linkedin.com/in/fillipy-vilela/)

@@ -21,23 +21,6 @@
   --mobile-menu-bg: rgba(3, 10, 6, 0.97);
 }
 
-:root[data-theme='light'] {
-  --bg: #f0f7ff;
-  --bg-card: #e0eeff;
-  --bg-card-hover: #cce0ff;
-  --accent: #2563eb;
-  --accent-light: #3b82f6;
-  --accent-glow: rgba(37, 99, 235, 0.25);
-  --accent-glow-soft: rgba(37, 99, 235, 0.1);
-  --text: #0f172a;
-  --text-muted: #475569;
-  --text-secondary: #1e40af;
-  --border: rgba(37, 99, 235, 0.18);
-  --border-hover: rgba(37, 99, 235, 0.45);
-  --navbar-bg: rgba(240, 247, 255, 0.88);
-  --mobile-menu-bg: rgba(240, 247, 255, 0.97);
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -49,7 +32,6 @@ body {
   line-height: 1.6;
   cursor: none;
   overflow-x: hidden;
-  transition: background-color 0.35s, color 0.35s;
 }
 
 a {

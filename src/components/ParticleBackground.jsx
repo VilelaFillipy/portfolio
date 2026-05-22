@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import './ParticleBackground.css'
 
-export default function ParticleBackground({ theme }) {
+export default function ParticleBackground() {
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -9,7 +9,7 @@ export default function ParticleBackground({ theme }) {
     const ctx = canvas.getContext('2d')
     let animId
     let mouse = { x: -9999, y: -9999 }
-    const dotColor = theme === 'light' ? '37, 99, 235' : '16, 185, 129'
+    const dotColor = '16, 185, 129'
 
     const resize = () => {
       canvas.width = window.innerWidth
@@ -67,7 +67,7 @@ export default function ParticleBackground({ theme }) {
       window.removeEventListener('resize', resize)
       window.removeEventListener('mousemove', onMouseMove)
     }
-  }, [theme])
+  }, [])
 
   return <canvas ref={canvasRef} className="particle-canvas" />
 }

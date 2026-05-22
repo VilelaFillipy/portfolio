@@ -1,11 +1,8 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import emailjs from '@emailjs/browser'
 import './Contact.css'
 
-const SERVICE_ID = 'service_dy32h58'
-const TEMPLATE_ID = 'template_n4my5l8'
-const PUBLIC_KEY = 'B6VNiVtkJXwTc0HNJ'
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/SEU_FORM_ID'
 
 const socials = [
   {
@@ -57,54 +54,48 @@ export default function Contact() {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
 
-    emailjs.send(
-      SERVICE_ID,
-      TEMPLATE_ID,
-      {
-        from_name: form.name,
-        from_email: form.email,
-        message: form.message,
-      },
-      PUBLIC_KEY
-    ).then(() => {
-      setStatus('sent')
-      setForm({ name: '', email: '', message: '' })
-    }).catch(() => {
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name: form.name, email: form.email, message: form.message }),
+      })
+      if (res.ok) {
+        setStatus('sent')
+        setForm({ name: '', email: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch {
       setStatus('error')
-    })
+    }
   }
 
   return (
     <section id="contact" ref={ref} className="contact-section">
       <div className="container">
-        <motion.div
-          variants={fadeUp(0)}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-        >
-          <div className="divider" />
-          <h2 className="section-title">Entre em <span>Contato</span></h2>
-          <p className="section-subtitle">
-            Tem um projeto em mente ou quer bater um papo? Adoraria te ouvir.
-          </p>
-        </motion.div>
-
         <div className="contact__grid">
           <motion.div
             className="contact__info"
-            variants={fadeUp(0.1)}
+            variants={fadeUp(0)}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
           >
+            <div className="divider" />
+            <h2 className="section-title">Entre em <span>Contato</span></h2>
+            <p className="section-subtitle">
+              Tem um projeto em mente? Vamos construir!
+            </p>
+
             <h3 className="contact__info-title">Vamos trabalhar juntos?</h3>
             <p className="contact__info-text">
-              Aberto a projetos freelance, parcerias e oportunidades full-time.
+              Aberto a projetos freelance e parcerias.
               Se você tem uma ideia e precisa de alguém para tirar ela do papel,
-              me manda uma mensagem — respondo rapidinho.
+              entre em contato, respondo em breve!
             </p>
 
             <div className="contact__socials">
@@ -154,7 +145,7 @@ export default function Contact() {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="seu@email.com"
+                placeholder="sua.empresa@email.com"
                 value={form.email}
                 onChange={handleChange}
                 required

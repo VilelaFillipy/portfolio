@@ -108,7 +108,7 @@ export default function Hero() {
             </div>
             <div className="hero__stat-divider" />
             <div className="hero__stat">
-              <strong>20+</strong>
+              <strong>50+</strong>
               <span>Projetos Entregues</span>
             </div>
             <div className="hero__stat-divider" />
