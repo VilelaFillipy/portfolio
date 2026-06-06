@@ -1,0 +1,18 @@
+{
+  "name": "Fillipy Vilela — Desenvolvedor Full Stack",
+  "short_name": "Fillipy Vilela",
+  "description": "Desenvolvedor full stack especializado em React, Node.js, Laravel e Flutter.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#10b981",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

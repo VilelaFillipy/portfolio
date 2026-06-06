@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fillipy.com.br/sitemap.xml

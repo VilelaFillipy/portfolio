@@ -128,8 +128,11 @@ export default function Hero() {
           <div className="hero__photo-wrap">
             <img
               src="/photo.png"
-              alt="Fillipy Vilela"
+              alt="Fillipy Vilela, desenvolvedor full stack"
               className="hero__photo"
+              width="1536"
+              height="2730"
+              fetchpriority="high"
             />
           </div>
         </motion.div>

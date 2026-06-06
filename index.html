@@ -3,20 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10b981" />
 
     <!-- SEO básico -->
-    <title>Fillipy Vilela — Desenvolvedor Full Stack</title>
-    <meta name="description" content="Fillipy Vilela, desenvolvedor full stack especializado em React, Node.js, Laravel e Flutter. Criação de aplicações web, sistemas escaláveis e APIs robustas." />
-    <meta name="keywords" content="Fillipy Vilela, desenvolvedor full stack, React, Node.js, Laravel, Flutter, desenvolvimento web, freelance" />
+    <title>Fillipy Vilela — Desenvolvedor Full Stack | React, Node.js, Laravel</title>
+    <meta name="description" content="Fillipy Vilela, desenvolvedor full stack especializado em React, Node.js, Laravel e Flutter. Criação de aplicações web, sistemas escaláveis e APIs robustas. Aberto a projetos freelance." />
+    <meta name="keywords" content="Fillipy Vilela, desenvolvedor full stack, programador, React, Node.js, Laravel, Flutter, desenvolvimento web, criação de sites, APIs, freelance, SaaS, Brasil" />
     <meta name="author" content="Fillipy Vilela" />
-    <link rel="canonical" href="https://fillipy.com.br" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="Portuguese" />
+    <link rel="canonical" href="https://fillipy.com.br/" />
+
+    <!-- Performance / pré-conexões -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
     <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fillipy.com.br" />
+    <meta property="og:url" content="https://fillipy.com.br/" />
+    <meta property="og:site_name" content="Fillipy Vilela" />
     <meta property="og:title" content="Fillipy Vilela — Desenvolvedor Full Stack" />
     <meta property="og:description" content="Desenvolvedor full stack especializado em React, Node.js, Laravel e Flutter. Aberto a projetos freelance e oportunidades." />
     <meta property="og:image" content="https://fillipy.com.br/photo.png" />
+    <meta property="og:image:alt" content="Foto de Fillipy Vilela, desenvolvedor full stack" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:locale" content="pt_BR" />
 
     <!-- Twitter Card -->
@@ -24,29 +35,80 @@
     <meta name="twitter:title" content="Fillipy Vilela — Desenvolvedor Full Stack" />
     <meta name="twitter:description" content="Desenvolvedor full stack especializado em React, Node.js, Laravel e Flutter." />
     <meta name="twitter:image" content="https://fillipy.com.br/photo.png" />
+    <meta name="twitter:image:alt" content="Foto de Fillipy Vilela, desenvolvedor full stack" />
 
     <!-- Dados estruturados (Google) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Fillipy Vilela",
-      "url": "https://fillipy.com.br",
-      "email": "vilelafillipy101@gmail.com",
-      "jobTitle": "Desenvolvedor Full Stack",
-      "sameAs": [
-        "https://github.com/VilelaFillipy",
-        "https://www.linkedin.com/in/fillipy-vilela/"
-      ],
-      "knowsAbout": ["React", "Node.js", "Laravel", "Flutter", "TypeScript", "Python", "AWS", "Docker"]
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://fillipy.com.br/#person",
+          "name": "Fillipy Vilela",
+          "url": "https://fillipy.com.br/",
+          "image": "https://fillipy.com.br/photo.png",
+          "email": "vilelafillipy101@gmail.com",
+          "jobTitle": "Desenvolvedor Full Stack",
+          "description": "Desenvolvedor full stack com mais de 4 anos de experiência em React, Node.js, Laravel e Flutter, criando aplicações web escaláveis, APIs e plataformas SaaS.",
+          "nationality": "Brazilian",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BR"
+          },
+          "sameAs": [
+            "https://github.com/VilelaFillipy",
+            "https://www.linkedin.com/in/fillipy-vilela/"
+          ],
+          "knowsAbout": ["React", "Node.js", "Laravel", "Flutter", "TypeScript", "JavaScript", "PHP", "Python", "AWS", "Docker", "Desenvolvimento Web", "APIs REST", "GraphQL", "SaaS"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://fillipy.com.br/#website",
+          "url": "https://fillipy.com.br/",
+          "name": "Fillipy Vilela — Desenvolvedor Full Stack",
+          "description": "Portfólio de Fillipy Vilela, desenvolvedor full stack especializado em React, Node.js, Laravel e Flutter.",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://fillipy.com.br/#person" }
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "Fillipy Vilela — Desenvolvimento de Software",
+          "url": "https://fillipy.com.br/",
+          "image": "https://fillipy.com.br/photo.png",
+          "description": "Desenvolvimento de aplicações web, sistemas escaláveis, APIs e aplicativos mobile sob demanda.",
+          "provider": { "@id": "https://fillipy.com.br/#person" },
+          "areaServed": "BR",
+          "availableLanguage": ["pt-BR"],
+          "serviceType": ["Desenvolvimento Web", "Desenvolvimento Backend", "Desenvolvimento Mobile", "Cloud & DevOps", "Automação"]
+        }
+      ]
     }
     </script>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>Fillipy Vilela — Desenvolvedor Full Stack</h1>
+      <p>
+        Desenvolvedor full stack com mais de 4 anos de experiência construindo
+        aplicações web rápidas, escaláveis e bem construídas — do frontend ao
+        backend. Especializado em React, Node.js, Laravel e Flutter, com
+        experiência em APIs REST e GraphQL, plataformas SaaS, e-commerce, cloud
+        (AWS), Docker e automação.
+      </p>
+      <p>Aberto a projetos freelance e parcerias remotas.</p>
+      <ul>
+        <li><a href="https://github.com/VilelaFillipy" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/fillipy-vilela/" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:vilelafillipy101@gmail.com">E-mail</a></li>
+      </ul>
+    </noscript>
     <form name="contato" netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="nome" />
       <input type="email" name="email" />
