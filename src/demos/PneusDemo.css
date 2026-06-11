@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+.rod {
+  --amber: #f59e0b;
+  --amber-d: #b45309;
+  --ink: #111827;
+  --bg: #ffffff;
+  --bg-2: #fafafa;
+  --bg-dark: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: auto;
+}
+.rod h1, .rod h2, .rod h3, .rod .rod-logo, .rod .rod-step__n, .rod .rod-marca {
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.rod-wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+/* nav */
+.rod-nav { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 3px solid var(--amber); box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.rod-nav__in { max-width: 1140px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+.rod-logo { font-size: 1.8rem; color: var(--ink); letter-spacing: 0.04em; }
+.rod-logo b { color: var(--amber); }
+.rod-nav nav { display: flex; align-items: center; gap: 28px; }
+.rod-nav nav a { color: var(--muted); font-weight: 600; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.06em; transition: color 0.2s; }
+.rod-nav nav a:hover { color: var(--amber-d); }
+.rod-nav__cta { background: var(--amber); color: var(--ink) !important; padding: 9px 20px; border-radius: 4px; }
+.rod-nav__cta:hover { background: #fbbf24 !important; }
+
+/* hero */
+.rod-hero { position: relative; overflow: hidden; background: var(--ink); }
+.rod-hero__bg { position: absolute; inset: 0; background:
+  radial-gradient(ellipse at 70% 50%, rgba(245,158,11,0.12), transparent 55%),
+  radial-gradient(ellipse at 10% 80%, rgba(245,158,11,0.06), transparent 45%); }
+.rod-hero__in { position: relative; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 52px; align-items: center; padding: 88px 24px; }
+.rod-badge { display: inline-block; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: var(--amber); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 3px; margin-bottom: 22px; }
+.rod-hero h1 { font-size: clamp(3rem, 7vw, 5.5rem); color: #fff; line-height: 0.92; margin-bottom: 22px; }
+.rod-hero h1 em { font-style: normal; color: var(--amber); }
+.rod-hero p { font-size: 1.06rem; color: rgba(255,255,255,0.65); max-width: 46ch; margin-bottom: 32px; font-family: 'Inter'; }
+.rod-hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 44px; }
+.rod-hero__stats { display: flex; gap: 40px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.1); }
+.rod-hero__stats strong { font-family: 'Bebas Neue'; font-size: 2.2rem; color: var(--amber); display: block; line-height: 1; letter-spacing: 0.04em; }
+.rod-hero__stats span { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.04em; }
+.rod-hero__img { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 24px 50px rgba(0,0,0,0.5); border: 1px solid rgba(245,158,11,0.15); }
+.rod-hero__img img { width: 100%; height: 100%; object-fit: cover; }
+
+.rod-btn { display: inline-flex; align-items: center; background: var(--amber); color: var(--ink); font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.06em; padding: 13px 28px; border-radius: 5px; transition: transform 0.25s, background 0.25s, box-shadow 0.25s; }
+.rod-btn:hover { background: #fbbf24; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(245,158,11,0.4); }
+.rod-btn--outline { background: transparent; border: 1.5px solid rgba(255,255,255,0.25); color: #fff; }
+.rod-btn--outline:hover { border-color: var(--amber); color: var(--amber); box-shadow: none; }
+.rod-btn--lg { font-size: 1.2rem; padding: 15px 36px; }
+
+/* sections */
+.rod-sec { padding: 96px 0; }
+.rod-sec--dark { background: var(--bg-dark); color: #fff; }
+.rod-sec--soft { background: var(--bg-2); }
+.rod-kicker { display: block; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-d); margin-bottom: 8px; }
+.rod-kicker--light { color: var(--amber); }
+.rod-h2 { font-size: clamp(2.4rem, 5.5vw, 4rem); margin-bottom: 44px; line-height: 0.92; max-width: 18ch; color: var(--ink); }
+.rod-h2--light { color: #fff; }
+
+/* cards */
+.rod-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.rod-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 26px 22px; border-bottom: 3px solid transparent; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.rod-card:hover { transform: translateY(-6px); border-bottom-color: var(--amber); box-shadow: 0 14px 36px rgba(0,0,0,0.08); }
+.rod-card__icon { display: grid; place-items: center; width: 46px; height: 46px; background: rgba(245,158,11,0.1); color: var(--amber-d); border-radius: 8px; margin-bottom: 14px; }
+.rod-card h3 { font-family: 'Bebas Neue'; font-size: 1.3rem; letter-spacing: 0.04em; margin-bottom: 8px; }
+.rod-card p { color: var(--muted); font-size: 0.9rem; }
+
+/* marcas */
+.rod-marcas { padding: 80px 0; background: var(--ink); }
+.rod-marcas__grid { display: flex; flex-wrap: wrap; gap: 16px; }
+.rod-marca { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 14px 28px; color: rgba(255,255,255,0.7); font-size: 1.3rem; letter-spacing: 0.08em; transition: background 0.2s, color 0.2s; }
+.rod-marca:hover { background: rgba(245,158,11,0.12); color: var(--amber); border-color: rgba(245,158,11,0.25); }
+
+/* processo */
+.rod-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.rod-step { position: relative; padding: 0; }
+.rod-step__n { font-family: 'Bebas Neue'; font-size: 3rem; color: rgba(245,158,11,0.25); display: block; line-height: 1; margin-bottom: 8px; letter-spacing: 0.04em; }
+.rod-step h3 { font-family: 'Bebas Neue'; font-size: 1.4rem; color: #fff; margin-bottom: 8px; letter-spacing: 0.04em; }
+.rod-step p { color: rgba(255,255,255,0.55); font-family: 'Inter'; font-size: 0.88rem; }
+
+/* diferenciais */
+.rod-difs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.rod-dif { display: flex; gap: 16px; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 24px; }
+.rod-dif__check { flex-shrink: 0; width: 32px; height: 32px; display: grid; place-items: center; background: var(--amber); color: var(--ink); border-radius: 4px; font-weight: 700; font-size: 0.95rem; font-family: 'Inter'; }
+.rod-dif h3 { font-family: 'Inter'; font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+.rod-dif p { color: var(--muted); font-size: 0.9rem; }
+
+/* depoimentos */
+.rod-deps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.rod-dep { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 28px 26px; }
+.rod-dep__stars { color: var(--amber); letter-spacing: 2px; margin-bottom: 14px; }
+.rod-dep p { font-size: 1rem; color: var(--ink); margin-bottom: 18px; line-height: 1.65; }
+.rod-dep__who strong { display: block; font-family: 'Bebas Neue'; font-size: 1.15rem; letter-spacing: 0.04em; }
+.rod-dep__who span { font-size: 0.82rem; color: var(--muted); }
+
+/* faq */
+.rod-faq { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 52px; align-items: start; }
+.rod-faq__list { display: flex; flex-direction: column; gap: 10px; }
+.rod-faq__item { background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.rod-faq__q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; background: none; border: none; text-align: left; font-family: 'Inter'; font-size: 1rem; font-weight: 600; color: var(--ink); cursor: pointer; }
+.rod-faq__icn { position: relative; width: 16px; height: 16px; flex-shrink: 0; }
+.rod-faq__icn::before, .rod-faq__icn::after { content: ''; position: absolute; background: var(--amber-d); border-radius: 2px; transition: transform 0.3s; }
+.rod-faq__icn::before { top: 7px; left: 0; width: 16px; height: 2px; }
+.rod-faq__icn::after { top: 0; left: 7px; width: 2px; height: 16px; }
+.rod-faq__item.is-open .rod-faq__icn::after { transform: scaleY(0); }
+.rod-faq__a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.rod-faq__item.is-open .rod-faq__a { max-height: 200px; }
+.rod-faq__a p { padding: 0 20px 20px; color: var(--muted); font-size: 0.93rem; }
+
+/* cta */
+.rod-cta { padding: 88px 0; text-align: center; background: var(--amber); }
+.rod-cta__in h2 { font-family: 'Bebas Neue'; font-size: clamp(2.4rem, 6vw, 4.5rem); color: var(--ink); margin-bottom: 12px; letter-spacing: 0.02em; }
+.rod-cta__in p { color: rgba(0,0,0,0.65); font-size: 1.05rem; margin-bottom: 30px; }
+.rod-cta .rod-btn { background: var(--ink); color: var(--amber); }
+.rod-cta .rod-btn:hover { background: #1f2937; }
+
+/* footer */
+.rod-foot { background: #0a0c10; color: #6b7280; padding: 54px 0 24px; }
+.rod-foot__in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; padding-bottom: 26px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.rod-foot .rod-logo { color: #fff; margin-bottom: 8px; font-size: 1.6rem; }
+.rod-foot .rod-logo b { color: var(--amber); }
+.rod-foot__desc { font-size: 0.9rem; max-width: 32ch; font-family: 'Inter'; }
+.rod-foot__col p { font-size: 0.9rem; font-family: 'Inter'; margin-bottom: 5px; }
+.rod-foot__copy { padding-top: 22px; font-size: 0.8rem; opacity: 0.55; text-align: center; font-family: 'Inter'; }
+
+/* responsive */
+@media (max-width: 860px) {
+  .rod-nav nav a:not(.rod-nav__cta) { display: none; }
+  .rod-hero__in { grid-template-columns: 1fr; gap: 36px; padding: 64px 24px; }
+  .rod-hero__img { order: -1; aspect-ratio: 16/9; }
+  .rod-hero__stats { gap: 24px; }
+  .rod-grid { grid-template-columns: 1fr 1fr; }
+  .rod-steps { grid-template-columns: 1fr 1fr; }
+  .rod-difs { grid-template-columns: 1fr; }
+  .rod-deps { grid-template-columns: 1fr; }
+  .rod-faq { grid-template-columns: 1fr; gap: 28px; }
+  .rod-marcas__grid { gap: 10px; }
+  .rod-sec, .rod-marcas { padding: 68px 0; }
+}
+@media (max-width: 480px) {
+  .rod-grid { grid-template-columns: 1fr; }
+  .rod-steps { grid-template-columns: 1fr; }
+}

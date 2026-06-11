@@ -23,7 +23,26 @@
   padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.navbar__logo img {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.navbar__logo:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
 }
 
 .navbar__links {
@@ -81,11 +100,10 @@
 }
 
 .navbar__right {
-  position: absolute;
-  right: 24px;
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .navbar__burger {
@@ -116,40 +134,80 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* OVERLAY MOBILE — renderizado via portal no body, fora do stacking context do nav */
+.navbar__overlay {
+  display: none;
+}
+
 @media (max-width: 700px) {
   .navbar__burger {
     display: flex;
   }
 
-
-
   .navbar__links {
-    position: fixed;
-    inset: 0;
-    top: 56px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 36px;
-    background: var(--mobile-menu-bg);
-    backdrop-filter: blur(16px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-    z-index: 999;
+    display: none;
   }
 
-  .navbar__links--open {
+  .navbar__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #030a06;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .navbar__overlay--open {
     opacity: 1;
     pointer-events: all;
   }
 
-  .navbar__link {
+  .navbar__overlay__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  .navbar__overlay__close:hover {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: rotate(90deg);
+  }
+
+  .navbar__overlay__links {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar__overlay__links .navbar__link {
     font-size: 1.3rem;
     font-weight: 600;
   }
 
-  .navbar__cta {
+  .navbar__overlay__links .navbar__cta {
     font-size: 1rem;
     padding: 12px 36px;
   }

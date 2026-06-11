@@ -1,0 +1,11 @@
+<svg width="360" height="130" viewBox="0 0 360 130" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fillipy Vilela — Web Designer">
+  <style>
+    .name { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; letter-spacing: -0.02em; }
+    .badge { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; letter-spacing: 0.02em; }
+  </style>
+  <text class="name" x="6" y="56" font-size="48" fill="#1a1714">Fillipy</text>
+  <text class="name" x="6" y="108" font-size="48" fill="#1a1714">Vilela</text>
+  <g transform="rotate(-16 270 86)">
+    <text class="badge" x="220" y="92" font-size="17" fill="#10b981">Web Designer</text>
+  </g>
+</svg>

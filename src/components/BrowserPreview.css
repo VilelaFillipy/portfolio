@@ -1,0 +1,117 @@
+/* Mock de "janela de browser" usado como preview placeholder dos sites.
+   Usado pela RamosPage. */
+.project-preview {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, var(--p1), var(--p2));
+  overflow: hidden;
+}
+
+.project-preview__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 12px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.project-preview__bar > span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.project-preview__url {
+  margin-left: 10px;
+  flex: 1;
+  height: 14px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  letter-spacing: 0.02em;
+}
+
+.project-preview__viewport {
+  position: absolute;
+  inset: 26px 0 0;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-preview__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-preview__logo {
+  width: 46px;
+  height: 12px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.project-preview__menu {
+  display: flex;
+  gap: 8px;
+}
+
+.project-preview__menu i {
+  width: 22px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.project-preview__hero {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-preview__h1 {
+  width: 75%;
+  height: 16px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.project-preview__h2 {
+  width: 55%;
+  height: 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.project-preview__btn {
+  margin-top: 4px;
+  width: 90px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.project-preview__cards {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.project-preview__cards div {
+  height: 34px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}

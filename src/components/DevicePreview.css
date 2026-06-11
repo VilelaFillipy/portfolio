@@ -1,0 +1,160 @@
+.devp {
+  position: relative;
+  width: 100%;
+  --d1: var(--accent);
+  --d2: var(--accent-light);
+}
+
+/* a "tela" comum a notebook e celular: recorta o iframe escalado.
+   herda o border-radius do aparelho (notebook = reto, celular = arredondado)
+   e força o clip mesmo com o iframe transformado (scale). */
+.devp__screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+  -webkit-mask-image: -webkit-radial-gradient(#fff, #000); /* força clip de filhos transformados no WebKit */
+  transform: translateZ(0);
+  background:
+    radial-gradient(120% 120% at 0% 0%, color-mix(in srgb, var(--d2) 35%, #0b0f14), #0b0f14);
+}
+
+/* ---------- poster (estado parado) ---------- */
+.devp__poster {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.devp--loaded .devp__poster {
+  opacity: 0;
+}
+
+/* esqueleto do site, pintado com a cor do ramo */
+.devp-skel {
+  position: absolute;
+  inset: 0;
+  padding: 8% 7%;
+  display: flex;
+  flex-direction: column;
+  gap: 6%;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--d1) 80%, #0b0f14), #0b0f14 130%);
+}
+.devp-skel__nav { display: flex; align-items: center; justify-content: space-between; }
+.devp-skel__logo { width: 24%; height: 9px; border-radius: 4px; background: rgba(255,255,255,0.9); }
+.devp-skel__links { display: flex; gap: 6px; }
+.devp-skel__links i { width: 16px; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.45); }
+.devp-skel__hero { display: flex; flex-direction: column; gap: 8px; margin-top: 4%; }
+.devp-skel__h1 { width: 72%; height: 14px; border-radius: 5px; background: rgba(255,255,255,0.95); }
+.devp-skel__h2 { width: 52%; height: 10px; border-radius: 5px; background: rgba(255,255,255,0.55); }
+.devp-skel__btn { width: 38%; height: 18px; border-radius: 6px; margin-top: 4px; background: rgba(255,255,255,0.85); }
+.devp-skel__cards { margin-top: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.devp-skel__cards span { height: 30px; border-radius: 7px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.25); }
+
+/* ---------- iframe ao vivo ---------- */
+.devp__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  transform-origin: top left;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.6s ease;
+  /* a escala medida em JS vem em --s; o transform base usa ela */
+  transform: scale(var(--s, 0.5));
+}
+.devp--loaded .devp__frame {
+  opacity: 1;
+}
+
+/* ====================================================== */
+/*                    MOLDURA: NOTEBOOK                    */
+/* ====================================================== */
+.devp-laptop {
+  width: 100%;
+}
+.devp-laptop__lid {
+  position: relative;
+  margin: 0 4%;
+  padding: 10px 10px 0;
+  background: linear-gradient(160deg, #2b3138, #14181d);
+  border-radius: 14px 14px 4px 4px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.06),
+    0 18px 40px rgba(0,0,0,0.45);
+}
+.devp-laptop__cam {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0a0d10;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+.devp-laptop__viewport {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #0b0f14;
+}
+.devp-laptop__base {
+  position: relative;
+  height: 14px;
+  margin: 0 1%;
+  background: linear-gradient(#3a4148, #20252b 60%, #15191e);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 14px 24px rgba(0,0,0,0.4);
+}
+.devp-laptop__notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18%;
+  height: 5px;
+  background: #0e1216;
+  border-radius: 0 0 8px 8px;
+}
+
+/* ====================================================== */
+/*                     MOLDURA: CELULAR                    */
+/* ====================================================== */
+.devp-phone {
+  position: relative;
+  width: 64%;
+  max-width: 260px;
+  margin: 0 auto;
+  padding: 9px;
+  background: linear-gradient(160deg, #2b3138, #14181d);
+  border-radius: 34px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.06),
+    inset 0 0 0 4px #0c0f13,
+    0 20px 44px rgba(0,0,0,0.5);
+}
+.devp-phone__notch {
+  position: absolute;
+  z-index: 5;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38%;
+  height: 16px;
+  background: #0c0f13;
+  border-radius: 0 0 12px 12px;
+}
+.devp-phone__viewport {
+  position: relative;
+  aspect-ratio: 9 / 18;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #0b0f14;
+}
